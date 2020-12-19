@@ -113,7 +113,7 @@ pipeline {
   }
   stage('Code Quality Analysis') {
    parallel {
-    stage('PMD') {
+  //  stage('PMD') {
    // agent {
   //    docker {
   //     image 'maven:3.6.0-jdk-8-alpine'
@@ -126,8 +126,8 @@ pipeline {
       // using pmd plugin
   //    step([$class: 'PmdPublisher', pattern: '**/target/pmd.xml'])
   //   }
-    }
-    stage('Findbugs') {
+ //   }
+  //  stage('Findbugs') {
     // agent {
     //  docker {
     //   image 'maven:3.6.0-jdk-8-alpine'
@@ -140,8 +140,8 @@ pipeline {
       // using findbugs plugin
    //   findbugs pattern: '**/target/findbugsXml.xml'
    //  }
-    }
-    stage('JavaDoc') {
+  //  }
+//    stage('JavaDoc') {
    //  agent {
    //   docker {
     //   image 'maven:3.6.0-jdk-8-alpine'
@@ -153,7 +153,7 @@ pipeline {
    //   sh ' mvn javadoc:javadoc'
   //    step([$class: 'JavadocArchiver', javadocDir: './target/site/apidocs', keepAll: 'true'])//
   //   }
-    }
+ //   }
     stage('SonarQube') {
      agent {
       docker {
